@@ -7,3 +7,5 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/SocialConnector/Sample/Sample.unity
+    guid: d9b5913d08a1a480e9a4c7bbbcf6ec6a
+  m_configObjects: {}
