@@ -26,8 +26,12 @@ extern "C" {
     
         UIActivityViewController *activityView = [[[UIActivityViewController alloc] initWithActivityItems:actItems applicationActivities: nil] autorelease];
     
-        if(floorf(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_7_1)
+        if(floorf(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_7_1){
             activityView.popoverPresentationController.sourceView = UnityGetGLViewController().view;
+            if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad){
+            	activityView.popoverPresentationController.sourceRect = CGRectMake(UnityGetGLViewController().view.bounds.size.width / 2.0, UnityGetGLViewController().view.bounds.size.height / 2.0, 1.0, 1.0);                
+            }
+        }
     
         [UnityGetGLViewController() presentViewController:activityView animated:YES completion:nil];
     }
